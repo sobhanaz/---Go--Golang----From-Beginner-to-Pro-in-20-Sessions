@@ -107,7 +107,7 @@ This is the kind of project that gets you a **Go backend developer** interview.
 - [x] Session 11 — Errors
 - [x] Session 12 — Concurrency I
 - [x] Session 13 — Concurrency II
-- [ ] Session 14 — Standard Library Tour
+- [x] Session 14 — Standard Library Tour
 - [ ] Session 15 — Files, JSON & Encoding
 - [ ] Session 16 — Testing
 - [ ] Session 17 — HTTP Servers
