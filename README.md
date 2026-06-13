@@ -110,7 +110,7 @@ This is the kind of project that gets you a **Go backend developer** interview.
 - [x] Session 14 — Standard Library Tour
 - [x] Session 15 — Files, JSON & Encoding
 - [x] Session 16 — Testing
-- [ ] Session 17 — HTTP Servers
+- [x] Session 17 — HTTP Servers
 - [ ] Session 18 — REST API + Database
 - [ ] Session 19 — Auth, Middleware & Config
 - [ ] Session 20 — Polish & Ship
