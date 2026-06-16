@@ -1,0 +1,15 @@
+# Compiled binaries
+/taskflow
+*.exe
+
+# SQLite database files (data should never be committed)
+*.db
+*.db-journal
+data/
+
+# Test/coverage artifacts
+cover.out
+*.test
+
+# Local environment overrides
+.env

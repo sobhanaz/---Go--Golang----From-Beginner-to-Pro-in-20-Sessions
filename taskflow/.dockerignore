@@ -1,0 +1,9 @@
+# Keep the build context small and clean.
+*.db
+*.db-journal
+data/
+.git
+.gitignore
+README.md
+Makefile
+*.md
