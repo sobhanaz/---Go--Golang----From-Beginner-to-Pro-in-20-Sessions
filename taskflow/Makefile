@@ -1,6 +1,6 @@
 # TaskFlow developer tasks. Run `make help` to see all commands.
 
-.PHONY: help run build test cover fmt vet tidy docker-build docker-run clean
+.PHONY: help run demo build test cover fmt vet tidy docker-build docker-run clean
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
@@ -8,6 +8,9 @@ help: ## Show this help
 
 run: ## Run the server locally
 	go run .
+
+demo: ## Run the end-to-end CLI demo (shows every operation + duration)
+	./demo.sh
 
 build: ## Build the binary into ./taskflow
 	CGO_ENABLED=0 go build -ldflags="-s -w" -o taskflow .

@@ -7,7 +7,29 @@ manages their own private list of tasks.
 > Built as the capstone project of a 20-session Go course. It demonstrates clean
 > architecture, authentication, middleware, testing, and containerized deployment.
 
+> 🚀 **New here? Follow the [step-by-step Getting Started guide](GETTING_STARTED.md)**
+> — run it in minutes, with screenshots of every step.
+
 ---
+
+## 📸 Screenshots
+
+The full API exercised end-to-end, with each operation's status and duration:
+
+![TaskFlow demo](docs/demo.png)
+
+<details>
+<summary>More screenshots</summary>
+
+**Server logging every request (with timings):**
+
+![server log](docs/run-server.png)
+
+**Using the API with curl:**
+
+![curl session](docs/curl-session.png)
+
+</details>
 
 ## ✨ Features
 

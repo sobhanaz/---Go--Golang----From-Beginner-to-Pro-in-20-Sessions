@@ -40,6 +40,9 @@ func (s *Server) Routes() http.Handler {
 	mux := http.NewServeMux()
 
 	// Public routes (no auth required).
+	// "GET /{$}" matches ONLY the exact root path "/" (Go 1.22+), so it acts as
+	// a friendly index without becoming a catch-all for unknown paths.
+	mux.HandleFunc("GET /{$}", s.handleIndex)
 	mux.HandleFunc("GET /health", s.handleHealth)
 	mux.HandleFunc("POST /auth/register", s.handleRegister)
 	mux.HandleFunc("POST /auth/login", s.handleLogin)
@@ -58,6 +61,26 @@ func (s *Server) Routes() http.Handler {
 
 func (s *Server) handleHealth(w http.ResponseWriter, r *http.Request) {
 	writeJSON(w, http.StatusOK, map[string]string{"status": "ok"})
+}
+
+// handleIndex returns a small JSON description of the API at the root path,
+// so opening "/" in a browser shows what's available instead of a 404.
+func (s *Server) handleIndex(w http.ResponseWriter, r *http.Request) {
+	writeJSON(w, http.StatusOK, map[string]any{
+		"service": "TaskFlow API",
+		"version": "1.0",
+		"endpoints": map[string]string{
+			"GET  /health":        "liveness check (public)",
+			"POST /auth/register": "create an account, returns a JWT (public)",
+			"POST /auth/login":    "log in, returns a JWT (public)",
+			"GET  /tasks":         "list your tasks; filters: ?done=, ?priority= (auth)",
+			"POST /tasks":         "create a task (auth)",
+			"GET  /tasks/{id}":    "get one task (auth)",
+			"PUT  /tasks/{id}":    "update a task (auth)",
+			"DELETE /tasks/{id}":  "delete a task (auth)",
+		},
+		"docs": "Send 'Authorization: Bearer <token>' for /tasks endpoints.",
+	})
 }
 
 // --- small response helpers shared by all handlers ---
