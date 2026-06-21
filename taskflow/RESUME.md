@@ -6,7 +6,7 @@ Copy-paste these into your CV / LinkedIn, then tailor the wording to the role.
 
 ## Résumé bullets (concise)
 
-**TaskFlow — Task Management REST API (Go)** · github.com/sobhanaz/taskflow
+**TaskFlow — Task Management REST API (Go)** · github.com/sobhanaz/go-from-beginner-to-pro/tree/main/taskflow
 
 - Built a multi-user task-management **REST API in Go** using the standard
   library `net/http`, with **JWT authentication** and bcrypt-hashed passwords.
